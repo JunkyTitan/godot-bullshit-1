@@ -1,8 +1,27 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+
+flags = 4
+load_path = "res://.import/playerGrey_up1.png-3aa61131c0882580ef256c2e63b2c4f5.stex"
+
+[sub_resource type="StreamTexture" id=2]
+
+flags = 4
+load_path = "res://.import/playerGrey_up2.png-1a4d6b79dc0f594823072cc61cec8a24.stex"
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+} ]
 
 [node name="Player" type="Area2D" index="0"]
 
-position = Vector2( 483, 283.5 )
+position = Vector2( 440, 246.5 )
 scale = Vector2( 1, 1.01563 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -14,5 +33,10 @@ audio_bus_name = "Master"
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 3 )
+animation = "up"
 
 
